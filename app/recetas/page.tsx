@@ -1,7 +1,11 @@
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/shared/page-header";
+import { RecipeGrid } from "@/components/recipes/recipe-grid";
+import { getRecipes } from "@/services/recipes.service";
 
-export default function ProductosPage() {
+export default function RecetasPage() {
+  const recipes = getRecipes();
+
   return (
     <section className="py-10 sm:py-14">
       <PageContainer>
@@ -10,7 +14,7 @@ export default function ProductosPage() {
           description="Ideas y propuestas para cocinar con plantas halófitas."
         />
 
-        <p className="text-neutral-600">Aquí irá el catálogo de plantas.</p>
+        <RecipeGrid recipes={recipes} />
       </PageContainer>
     </section>
   );
