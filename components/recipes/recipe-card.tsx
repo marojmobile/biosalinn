@@ -8,7 +8,7 @@ type RecipeCardProps = {
 export function RecipeCard({ recipe }: RecipeCardProps) {
   return (
     <article className="overflow-hidden rounded-2xl border border-neutral-200 bg-white transition hover:border-neutral-300 hover:shadow-sm">
-      <div className="aspect-[4/3] bg-neutral-200" />
+      <div className="aspect-4/3 bg-neutral-200" />
 
       <div className="space-y-4 p-5">
         <div className="space-y-1">

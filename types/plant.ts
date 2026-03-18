@@ -5,7 +5,7 @@ export type Plant = {
   scientificName?: string;
   shortDescription: string;
   description: string;
-  image: string;
+  images: string[];
   culinaryUses?: string[];
   seasons?: string[];
   featured?: boolean;

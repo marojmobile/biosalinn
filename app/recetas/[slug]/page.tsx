@@ -124,7 +124,7 @@ export default async function RecipeDetailPage({
           </div>
 
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-            <div className="aspect-[4/5] rounded-xl bg-neutral-200" />
+            <div className="aspect-4/5 rounded-xl bg-neutral-200" />
           </div>
         </div>
       </PageContainer>
