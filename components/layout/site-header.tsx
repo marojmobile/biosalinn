@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MainNav } from "@/components/layout/main-nav";
+import { MobileNav } from "@/components/layout/mobile-nav";
 import { PageContainer } from "@/components/layout/page-container";
 
 export function SiteHeader() {
@@ -13,6 +14,7 @@ export function SiteHeader() {
         </Link>
 
         <MainNav />
+        <MobileNav />
       </PageContainer>
     </header>
   );
