@@ -79,7 +79,7 @@ export function PlantDetail({ plant }: PlantDetailProps) {
         </div>
 
         <div className="order-2 space-y-4 lg:order-1">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
             <Image
               key={currentImage}
               src={currentImage}
@@ -102,7 +102,7 @@ export function PlantDetail({ plant }: PlantDetailProps) {
                     type="button"
                     onClick={() => setSelectedImage(index)}
                     className={[
-                      "group relative aspect-[4/3] overflow-hidden rounded-xl border bg-neutral-50 transition-all duration-200",
+                      "group relative aspect-4/3 overflow-hidden rounded-xl border bg-neutral-50 transition-all duration-200",
                       isActive
                         ? "border-neutral-900 ring-2 ring-neutral-900/20"
                         : "border-neutral-200 hover:border-neutral-400",

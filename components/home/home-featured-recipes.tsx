@@ -1,27 +1,34 @@
 import Link from "next/link";
 
-import { getFeaturedRecipes } from "@/services/recipes.service";
 import { RecipeGrid } from "@/components/recipes/recipe-grid";
+import { getFeaturedRecipes } from "@/services/recipes.service";
 
 export function HomeFeaturedRecipes() {
   const recipes = getFeaturedRecipes();
 
   return (
-    <section className="py-12 sm:py-16">
-      <div className="mx-auto max-w-6xl px-4 space-y-8">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-semibold text-neutral-950">Recetas</h2>
-            <p className="text-neutral-600">
-              Ideas para cocinar con plantas halófitas.
+    <section className="bg-[#f4f1ec] py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+              Cómo usarlas
+            </p>
+            <h2 className="max-w-xl text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
+              Recetas que convierten curiosidad en uso real
+            </h2>
+            <p className="max-w-2xl text-base leading-7 text-[#5f5950]">
+              Las recetas no deben vivir aisladas: sirven para explicar el
+              producto y reducir la fricción de compra o consumo, especialmente
+              desde móvil y desde QR.
             </p>
           </div>
 
           <Link
             href="/recetas"
-            className="text-sm font-medium text-neutral-900 hover:underline"
+            className="inline-flex items-center text-sm font-medium text-[#35542f] hover:underline lg:justify-self-end"
           >
-            Ver todas
+            Ver todas las recetas
           </Link>
         </div>
 

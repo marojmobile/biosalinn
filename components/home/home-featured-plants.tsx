@@ -1,28 +1,38 @@
 import Link from "next/link";
 
-import { getFeaturedPlants } from "@/services/plants.service";
 import { PlantGrid } from "@/components/plants/plant-grid";
+import { getFeaturedPlants } from "@/services/plants.service";
 
 export function HomeFeaturedPlants() {
   const plants = getFeaturedPlants();
 
   return (
-    <section className="py-12 sm:py-16 bg-neutral-50">
-      <div className="mx-auto max-w-6xl px-4 space-y-8">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-semibold text-neutral-950">Plantas</h2>
-            <p className="text-neutral-600">
-              Descubre nuestro catálogo de halófitas comestibles.
+    <section className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+              Nuestras plantas
             </p>
+            <h2 className="max-w-md text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
+              El corazón del proyecto
+            </h2>
           </div>
 
-          <Link
-            href="/productos"
-            className="text-sm font-medium text-neutral-900 hover:underline"
-          >
-            Ver todas
-          </Link>
+          <div className="space-y-4 lg:justify-self-end lg:text-right">
+            <p className="max-w-2xl text-base leading-7 text-[#5f5950]">
+              Las plantas deben ocupar un lugar central en la home: son el
+              núcleo del catálogo y la base de la relación con recetas, QR y
+              producto.
+            </p>
+
+            <Link
+              href="/productos"
+              className="inline-flex items-center text-sm font-medium text-[#35542f] hover:underline"
+            >
+              Ver todas las plantas
+            </Link>
+          </div>
         </div>
 
         <PlantGrid plants={plants} />
