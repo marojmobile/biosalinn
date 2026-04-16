@@ -8,18 +8,15 @@ const contactEmail = "info@biosalinn.com";
 const enquiryTypes = [
   {
     title: "Restauración",
-    description:
-      "Para cocinas, restaurantes y espacios gastronómicos que quieran trabajar el producto o conocer mejor sus aplicaciones.",
+    description: "Para cocinas y espacios gastronómicos que quieran trabajar el producto.",
   },
   {
     title: "Distribución",
-    description:
-      "Para tiendas, canales especializados y negocios que quieran valorar encaje comercial o presencia en punto de venta.",
+    description: "Para tiendas, canales especializados y puntos de venta.",
   },
   {
     title: "Colaboraciones y prensa",
-    description:
-      "Para proyectos, divulgación, investigación, medios o conversaciones ligadas a innovación agrícola y territorio.",
+    description: "Para proyectos, medios, divulgación o iniciativas compartidas.",
   },
 ];
 
@@ -34,37 +31,45 @@ export default function ContactoPage() {
     <section className="py-10 sm:py-14">
       <PageContainer>
         <div className="space-y-4 border-b border-neutral-200 pb-8 sm:pb-10">
-          <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
+          <p className="text-xs uppercase tracking-[0.32em] text-[#8d7a63]">
             Contacto
+          </p>
+          <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
+            Hablemos
           </h1>
           <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg">
-            Hablemos de producto, distribución o colaboraciones. Si encaja con
-            tu negocio o proyecto, te ayudamos a dar el siguiente paso.
+            Escríbenos si quieres trabajar el producto, valorar distribución o
+            abrir una colaboración con VERDESAL.
           </p>
         </div>
 
-        <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
+        <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-12">
           <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {enquiryTypes.map((type) => (
+            {enquiryTypes.map((type, index) => (
               <article
                 key={type.title}
-                className="rounded-[1.75rem] border border-neutral-200 bg-white p-6"
+                className={[
+                  "rounded-[1.5rem] border p-5 sm:p-6",
+                  index === 1
+                    ? "border-[#ddd2c5] bg-[#f4f1ec]"
+                    : "border-neutral-200 bg-white",
+                ].join(" ")}
               >
-                <h2 className="text-xl font-semibold text-neutral-950">
+                <h2 className="text-lg font-semibold text-neutral-950">
                   {type.title}
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
+                <p className="mt-2 text-sm leading-6 text-neutral-600 sm:text-base">
                   {type.description}
                 </p>
               </article>
             ))}
           </section>
 
-          <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <section className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
             <div className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                  Escríbenos
+                  Formulario
                 </p>
                 <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
                   Cuéntanos qué necesitas
@@ -125,12 +130,12 @@ export default function ContactoPage() {
                   <textarea
                     name="message"
                     rows={6}
-                    placeholder="Explícanos brevemente tu interés, tu negocio o el tipo de colaboración que te gustaría valorar."
+                    placeholder="Explícanos brevemente tu interés, tu negocio o la colaboración que quieres valorar."
                     className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-500"
                   />
                 </label>
 
-                <div className="space-y-3 pt-1">
+                <div className="space-y-3 border-t border-neutral-200 pt-5">
                   <button
                     type="button"
                     className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
@@ -139,9 +144,8 @@ export default function ContactoPage() {
                   </button>
 
                   <p className="text-sm leading-6 text-neutral-500">
-                    El formulario queda preparado para conectar el envío con el
-                    canal definitivo de contacto. Mientras tanto, también puedes
-                    escribirnos directamente.
+                    El formulario queda preparado para conectarlo al canal
+                    definitivo de contacto.
                   </p>
                 </div>
               </form>
@@ -152,6 +156,7 @@ export default function ContactoPage() {
                 <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
                   Contacto directo
                 </p>
+
                 <div className="mt-5 space-y-5">
                   <div>
                     <p className="text-sm font-medium text-neutral-900">
@@ -188,32 +193,23 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
-                <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                  Qué puede ayudarte a avanzar
-                </p>
-                <ul className="mt-5 space-y-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  <li>Indicar si tu interés es comercial, gastronómico o técnico.</li>
-                  <li>Contar brevemente qué tipo de negocio o proyecto tienes.</li>
-                  <li>Explicar si buscas producto, distribución o colaboración.</li>
+              <div className="rounded-[1.5rem] border border-neutral-200 bg-white p-6">
+                <h3 className="text-lg font-semibold text-neutral-950">
+                  Para avanzar más rápido
+                </h3>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-neutral-600 sm:text-base">
+                  <li>Indica si tu consulta es comercial, gastronómica o técnica.</li>
+                  <li>Cuéntanos qué tipo de negocio o proyecto tienes.</li>
+                  <li>Explica si buscas producto, distribución o colaboración.</li>
                 </ul>
               </div>
 
-              <div className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 sm:p-8">
-                <h3 className="text-lg font-semibold text-neutral-950">
-                  ¿Aún no conoces bien el producto?
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  Antes de escribir, puede ayudarte ver las plantas y entender
-                  mejor cómo se presentan.
-                </p>
-                <Link
-                  href="/productos"
-                  className="mt-4 inline-flex text-sm font-medium text-[#35542f] hover:underline"
-                >
-                  Ver productos
-                </Link>
-              </div>
+              <Link
+                href="/productos"
+                className="inline-flex items-center text-sm font-medium text-[#35542f] hover:underline"
+              >
+                Ver productos antes de escribir
+              </Link>
             </aside>
           </section>
         </div>

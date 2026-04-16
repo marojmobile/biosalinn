@@ -3,67 +3,94 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
 import { siteConfig } from "@/content/site-config";
 
-const salePoints = [
+type SalePoint = {
+  name: string;
+  type: "Restaurante" | "Tienda" | "Distribuidor" | "Mercado";
+  locality: string;
+  area: string;
+  description?: string;
+  contact?: string;
+  href?: string;
+  actionLabel?: string;
+};
+
+const salePoints: SalePoint[] = [
   {
-    name: "Restaurant Can Roca de la Sal",
+    name: "Restaurant Marina Vella",
     type: "Restaurante",
-    locality: "Castelló d'Empúries",
-    description:
-      "Cocina de producto con propuestas estacionales donde las halófitas se integran en carta.",
-    href: "#",
-    actionLabel: "Ver disponibilidad",
-  },
-  {
-    name: "Empordà Gourmet",
-    type: "Tienda gourmet",
-    locality: "Figueres",
-    description:
-      "Selección de productos locales y vegetales singulares para público especializado.",
-    href: "#",
-    actionLabel: "Consultar tienda",
-  },
-  {
-    name: "Mercat Verd Setmanal",
-    type: "Mercado",
     locality: "Roses",
+    area: "Alt Empordà",
     description:
-      "Punto de encuentro semanal con producto fresco y enfoque en productores del territorio.",
-    href: "#",
-    actionLabel: "Ver horario",
+      "Cocina de producto con propuestas de temporada donde las halófitas aparecen en carta y sugerencias.",
+    contact: "Reservas y carta según temporada",
   },
   {
-    name: "Distribuciones Costa Brava Fresh",
+    name: "Cuina de Sal",
+    type: "Restaurante",
+    locality: "Cadaqués",
+    area: "Costa Brava",
+    description:
+      "Espacio gastronómico donde el producto vegetal local se trabaja con enfoque contemporáneo.",
+    contact: "Consulta disponibilidad en servicio",
+  },
+  {
+    name: "Botiga del Mercat",
+    type: "Tienda",
+    locality: "Figueres",
+    area: "Alt Empordà",
+    description:
+      "Selección de producto local y gourmet con interés en vegetales singulares y de proximidad.",
+    contact: "Venta directa en tienda",
+  },
+  {
+    name: "Despensa de l'Empordà",
+    type: "Tienda",
+    locality: "Girona",
+    area: "Girona",
+    description:
+      "Tienda especializada en producto regional y propuestas alimentarias con identidad de territorio.",
+    contact: "Consulta stock semanal",
+  },
+  {
+    name: "Mercat de Productors del Dissabte",
+    type: "Mercado",
+    locality: "Castelló d'Empúries",
+    area: "Empordà",
+    description:
+      "Mercado local orientado a producto fresco y pequeños productores con presencia estacional.",
+    contact: "Sábados por la mañana",
+  },
+  {
+    name: "Canal Fresc Foodservice",
     type: "Distribuidor",
     locality: "Girona",
+    area: "Catalunya",
     description:
-      "Canal orientado a hostelería y negocios que buscan producto diferencial y de proximidad.",
+      "Distribución para hostelería y negocios que buscan producto diferencial con relato agrícola claro.",
+    contact: "Canal profesional",
     href: "/contacto",
     actionLabel: "Solicitar contacto",
   },
-  {
-    name: "La Botiga del Port",
-    type: "Tienda especializada",
-    locality: "L'Escala",
-    description:
-      "Espacio de producto local donde descubrir vegetales con identidad y valor gastronómico.",
-    href: "#",
-    actionLabel: "Más información",
-  },
-  {
-    name: "Cuina Oberta Lab",
-    type: "Espacio gastronómico",
-    locality: "Barcelona",
-    description:
-      "Entorno de cocina y divulgación gastronómica donde el producto se presenta en contexto de uso.",
-    href: "#",
-    actionLabel: "Ver espacio",
-  },
 ];
+
+const groupedSalePoints = {
+  Restaurantes: salePoints.filter((point) => point.type === "Restaurante"),
+  Tiendas: salePoints.filter((point) => point.type === "Tienda"),
+  Mercados: salePoints.filter((point) => point.type === "Mercado"),
+  Distribución: salePoints.filter((point) => point.type === "Distribuidor"),
+};
+
+const typeStyles: Record<SalePoint["type"], string> = {
+  Restaurante: "bg-[#35542f] text-white",
+  Tienda: "bg-neutral-100 text-neutral-700",
+  Distribuidor: "bg-[#e8dfd2] text-[#35542f]",
+  Mercado: "bg-[#d9ca7a]/40 text-neutral-800",
+};
 
 export const metadata: Metadata = {
   title: `Puntos de venta | ${siteConfig.name}`,
   description:
-    "Encuentra dónde comprar o descubrir los productos VERDESAL en tiendas, restaurantes, mercados y distribución especializada.",
+    "Encuentra dónde comprar o descubrir productos VERDESAL en restaurantes, tiendas, mercados y distribución especializada.",
 };
 
 export default function PuntosDeVentaPage() {
@@ -77,81 +104,113 @@ export default function PuntosDeVentaPage() {
           <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg">
             Encuentra dónde comprar o descubrir nuestros productos.
           </p>
+          <p className="max-w-3xl text-sm leading-6 text-neutral-500 sm:text-base">
+            La disponibilidad puede variar según temporada, formato y canal.
+            Si buscas un punto concreto o quieres trabajar con VERDESAL, te
+            ayudamos a orientarlo.
+          </p>
         </div>
 
-        <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-sm leading-6 text-neutral-600 sm:p-6 sm:text-base">
-            Consulta algunos espacios donde el producto puede encontrarse o
-            descubrirse en contexto de compra, cocina o distribución. La
-            disponibilidad puede variar según temporada y formato.
-          </div>
+        <div className="mt-8 space-y-10 sm:mt-10 sm:space-y-12">
+          {Object.entries(groupedSalePoints).map(([groupName, points]) => (
+            <section key={groupName} className="space-y-4">
+              <div className="flex items-end justify-between gap-4 border-b border-neutral-200 pb-3">
+                <div className="space-y-1">
+                  <h2 className="text-xl font-semibold text-neutral-950 sm:text-2xl">
+                    {groupName}
+                  </h2>
+                  <p className="text-sm text-neutral-500">
+                    {points.length} {points.length === 1 ? "punto" : "puntos"}
+                  </p>
+                </div>
+              </div>
 
-          <section className="space-y-4">
-            <div className="flex items-center justify-between gap-4">
-              <h2 className="text-xl font-semibold text-neutral-950 sm:text-2xl">
-                Listado de puntos de venta
-              </h2>
-              <p className="text-sm text-neutral-500">
-                {salePoints.length} ubicaciones
-              </p>
-            </div>
+              <div className="grid gap-4">
+                {points.map((point) => (
+                  <article
+                    key={`${point.name}-${point.locality}`}
+                    className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6"
+                  >
+                    <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+                      <div className="min-w-0 space-y-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span
+                            className={[
+                              "rounded-full px-3 py-1 text-xs font-medium",
+                              typeStyles[point.type],
+                            ].join(" ")}
+                          >
+                            {point.type}
+                          </span>
+                          <span className="text-sm font-medium text-neutral-900">
+                            {point.locality}
+                          </span>
+                          <span className="text-sm text-neutral-500">
+                            · {point.area}
+                          </span>
+                        </div>
 
-            <div className="grid gap-4">
-              {salePoints.map((point) => (
-                <article
-                  key={`${point.name}-${point.locality}`}
-                  className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6"
-                >
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="min-w-0 space-y-3">
-                      <div className="flex flex-wrap gap-2">
-                        <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
-                          {point.type}
-                        </span>
-                        <span className="rounded-full border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600">
-                          {point.locality}
-                        </span>
+                        <div className="space-y-2">
+                          <h3 className="text-lg font-semibold text-neutral-950 sm:text-xl">
+                            {point.name}
+                          </h3>
+                          {point.description ? (
+                            <p className="max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
+                              {point.description}
+                            </p>
+                          ) : null}
+                        </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-neutral-950 sm:text-xl">
-                          {point.name}
-                        </h3>
-                        {point.description ? (
-                          <p className="max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
-                            {point.description}
+                      <div className="space-y-3 rounded-xl bg-neutral-50 p-4 lg:justify-self-end">
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+                            Ubicación
                           </p>
+                          <p className="mt-1 text-sm font-medium text-neutral-900">
+                            {point.locality}
+                          </p>
+                        </div>
+
+                        {point.contact ? (
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+                              Información
+                            </p>
+                            <p className="mt-1 text-sm text-neutral-600">
+                              {point.contact}
+                            </p>
+                          </div>
+                        ) : null}
+
+                        {point.href && point.actionLabel ? (
+                          <Link
+                            href={point.href}
+                            className="inline-flex items-center text-sm font-medium text-[#35542f] hover:underline"
+                          >
+                            {point.actionLabel}
+                          </Link>
                         ) : null}
                       </div>
                     </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
 
-                    <div className="sm:shrink-0">
-                      <Link
-                        href={point.href}
-                        className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-4 py-2.5 text-sm font-medium text-neutral-900 transition hover:border-neutral-400 hover:bg-neutral-50"
-                      >
-                        {point.actionLabel}
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-              <div className="space-y-3">
+          <section className="border-t border-neutral-200 pt-6 sm:pt-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                  Distribución
+                  Canal profesional
                 </p>
-                <h2 className="max-w-2xl text-2xl tracking-tight text-[#35542f] sm:text-3xl">
-                  ¿Quieres ofrecer VERDESAL en tu negocio?
+                <h2 className="text-2xl tracking-tight text-neutral-950 sm:text-3xl">
+                  ¿Quieres ofrecer nuestros productos?
                 </h2>
-                <p className="max-w-2xl text-base leading-7 text-[#4f4a42]">
-                  Si estás valorando incorporar nuestras plantas en tienda,
-                  restauración o distribución, podemos estudiar contigo el mejor
-                  encaje.
+                <p className="max-w-2xl text-base leading-7 text-neutral-600">
+                  Si tienes una tienda, un restaurante o un canal de
+                  distribución, podemos estudiar contigo el mejor encaje.
                 </p>
               </div>
 
@@ -159,7 +218,7 @@ export default function PuntosDeVentaPage() {
                 href="/contacto"
                 className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Contactar para distribución
+                ¿Quieres trabajar con nosotros?
               </Link>
             </div>
           </section>
