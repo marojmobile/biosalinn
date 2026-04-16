@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
@@ -42,6 +43,7 @@ export default async function RecipeDetailPage({
   const relatedPlants = getPlants().filter((plant) =>
     recipe.plantSlugs.includes(plant.slug),
   );
+  const hasImage = Boolean(recipe.image?.trim());
 
   return (
     <section className="py-10 sm:py-14">
@@ -124,7 +126,21 @@ export default async function RecipeDetailPage({
           </div>
 
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-            <div className="aspect-4/5 rounded-xl bg-neutral-200" />
+            <div className="relative aspect-4/5 overflow-hidden rounded-xl bg-neutral-100">
+              {hasImage ? (
+                <Image
+                  src={recipe.image}
+                  alt={`Imagen de la receta ${recipe.title}`}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center px-8 text-center text-sm text-neutral-500">
+                  La imagen de esta receta estará disponible muy pronto.
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </PageContainer>

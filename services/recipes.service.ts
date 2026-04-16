@@ -15,3 +15,17 @@ export function getRecipeBySlug(slug: string) {
 export function getRecipesByPlantSlug(plantSlug: string) {
   return recipes.filter((recipe) => recipe.plantSlugs.includes(plantSlug));
 }
+
+type GetRecipesFilteredOptions = {
+  plantSlug?: string | null;
+};
+
+export function getRecipesFiltered({
+  plantSlug,
+}: GetRecipesFilteredOptions = {}) {
+  if (!plantSlug) {
+    return recipes;
+  }
+
+  return getRecipesByPlantSlug(plantSlug);
+}

@@ -9,7 +9,7 @@ export const recipes: Recipe[] = [
       "Una receta fresca y sencilla para descubrir la textura crujiente y salina de la salicornia.",
     description:
       "Una propuesta ligera y fácil de preparar, ideal para un primer contacto con la salicornia en cocina.",
-    image: "/images/recipes/ensalada-salicornia.jpg",
+    image: "/images/recipes/ensalada-salicornia.webp",
     ingredients: [
       "Salicornia",
       "Tomate",
@@ -33,7 +33,7 @@ export const recipes: Recipe[] = [
       "Una forma simple de apreciar el aspecto brillante y la frescura del ficoide glacial.",
     description:
       "Receta pensada para resaltar el carácter visual y la textura de esta planta halófita.",
-    image: "/images/recipes/ficoide-fresco.jpg",
+    image: "/images/recipes/ficoide-fresco.webp",
     ingredients: ["Ficoide glacial", "Pepino", "Yogur natural", "Limón"],
     steps: [
       "Lava cuidadosamente el ficoide glacial.",
@@ -52,7 +52,7 @@ export const recipes: Recipe[] = [
       "Una receta sencilla para combinar varias plantas halófitas en una misma propuesta.",
     description:
       "Ideal para mostrar que estas especies pueden convivir en cocina y generar platos originales.",
-    image: "/images/recipes/salteado-halofitas.jpg",
+    image: "/images/recipes/salteado-halofitas.webp",
     ingredients: ["Salicornia", "Verdolaga marina", "Ajo", "Aceite de oliva"],
     steps: [
       "Calienta una sartén con un poco de aceite.",
