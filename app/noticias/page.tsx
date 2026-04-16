@@ -1,201 +1,197 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
-import { PageHeader } from "@/components/shared/page-header";
 import { siteConfig } from "@/content/site-config";
 
-const sections = [
+type NewsItem = {
+  title: string;
+  excerpt: string;
+  date: string;
+  category?: string;
+  image?: string;
+  featured?: boolean;
+};
+
+const newsItems: NewsItem[] = [
   {
-    title: "Actualidad del proyecto",
-    description:
-      "Avances, hitos y novedades relacionadas con el desarrollo de VERDESAL como proyecto agrícola innovador.",
+    title: "VERDESAL impulsa una nueva fase de cultivo biosalino en el Empordà",
+    excerpt:
+      "El proyecto avanza en la validación de plantas halófitas con interés agrícola y gastronómico, reforzando su enfoque de producto desde el territorio.",
+    date: "2026-04-05",
+    category: "Proyecto",
+    image: "/images/plants/salicornia/cover.webp",
+    featured: true,
   },
   {
-    title: "Investigación y contexto",
-    description:
-      "Contenidos ligados a agricultura biosalina, validación de cultivos y conocimiento técnico aplicado al territorio.",
+    title: "Las halófitas ganan presencia en conversaciones sobre agricultura adaptada",
+    excerpt:
+      "La investigación aplicada en entornos salinos vuelve a situar estos cultivos como una vía con potencial productivo y valor diferencial.",
+    date: "2026-03-21",
+    category: "Divulgación",
+    image: "/images/plants/ficoide-glacial/cover.webp",
   },
   {
-    title: "Presencia y difusión",
-    description:
-      "Apariciones, colaboraciones, eventos o menciones que ayuden a entender cómo el proyecto gana visibilidad.",
+    title: "Primeras pruebas de presentación comercial para canal gourmet",
+    excerpt:
+      "VERDESAL trabaja cómo traducir el relato agrícola y técnico en una propuesta clara para retail especializado y puntos de venta afines.",
+    date: "2026-03-11",
+    category: "Producto",
+    image: "/images/plants/verdolaga-marina/cover.webp",
+  },
+  {
+    title: "La cocina sigue funcionando como espacio de demostración de uso",
+    excerpt:
+      "Nuevas colaboraciones culinarias ayudan a visualizar aplicaciones concretas sin desplazar el foco principal del producto y su cultivo.",
+    date: "2026-02-27",
+    category: "Gastronomía",
+    image: "/images/recipes/ensalada-salicornia.webp",
+  },
+  {
+    title: "VERDESAL participa en un encuentro sobre innovación agraria y territorio",
+    excerpt:
+      "La presencia en contextos profesionales permite compartir aprendizajes sobre cultivo biosalino, adaptación y nuevas oportunidades productivas.",
+    date: "2026-02-14",
+    category: "Prensa",
+  },
+  {
+    title: "Nuevos materiales divulgativos para explicar el valor de las plantas halófitas",
+    excerpt:
+      "El proyecto continúa afinando cómo comunicar mejor la relación entre base científica, uso culinario y propuesta comercial.",
+    date: "2026-01-29",
+    category: "Divulgación",
   },
 ];
 
-const criteria = [
-  "Noticias útiles para entender el proyecto, no solo para comunicar actividad",
-  "Relato alineado con agricultura, ciencia y producto",
-  "Tono claro, sobrio y creíble, evitando ruido promocional",
-];
+const featuredPost = newsItems.find((item) => item.featured) ?? newsItems[0];
+const secondaryPosts = newsItems.filter((item) => item !== featuredPost);
 
-const nextContent = [
-  {
-    step: "01",
-    title: "Novedades del cultivo",
-    description:
-      "Evolución del proyecto, líneas de trabajo y decisiones que explican cómo avanza VERDESAL sobre el terreno.",
-  },
-  {
-    step: "02",
-    title: "Aprendizajes e innovación",
-    description:
-      "Contenidos que traduzcan la base científica en ideas comprensibles para cliente, colaborador o lector general.",
-  },
-  {
-    step: "03",
-    title: "Difusión del producto",
-    description:
-      "Noticias que conecten ese trabajo con producto real, presencia pública y valor gastronómico cuando proceda.",
-  },
-];
+function formatDate(date: string) {
+  return new Intl.DateTimeFormat("es-ES", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+}
 
 export const metadata: Metadata = {
   title: `Noticias | ${siteConfig.name}`,
   description:
-    "Actualidad de VERDESAL: proyecto agrícola, innovación biosalina, investigación aplicada y presencia en medios.",
+    "Noticias, avances y publicaciones de VERDESAL sobre agricultura biosalina, producto, divulgación y presencia del proyecto.",
 };
 
 export default function NoticiasPage() {
   return (
     <section className="py-10 sm:py-14">
       <PageContainer>
-        <PageHeader
-          title="Noticias"
-          description="Actualidad del proyecto, avances en agricultura biosalina y presencia de VERDESAL en contextos de innovación, producto y territorio."
-        />
+        <div className="space-y-4 border-b border-neutral-200 pb-8 sm:pb-10">
+          <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
+            Noticias
+          </h1>
+          <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg">
+            Actualidad del proyecto, avances, apariciones y contenidos de
+            divulgación.
+          </p>
+        </div>
 
-        <div className="space-y-10 sm:space-y-14">
-          <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-            <article className="rounded-[2rem] bg-[#f4f1ec] p-6 sm:p-8 lg:p-10">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Esta sección
-              </p>
-              <h2 className="mt-4 max-w-2xl text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                Un espacio para seguir la evolución del proyecto con contexto y
-                criterio.
+        <div className="mt-8 space-y-10 sm:mt-10 sm:space-y-12">
+          <article className="overflow-hidden rounded-[2rem] border border-neutral-200 bg-white">
+            <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="relative aspect-[16/10] bg-neutral-100 lg:aspect-auto lg:min-h-[360px]">
+                {featuredPost.image ? (
+                  <Image
+                    src={featuredPost.image}
+                    alt={`Imagen de ${featuredPost.title}`}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center px-6 text-center text-sm text-neutral-500">
+                    Imagen disponible próximamente
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col justify-between p-6 sm:p-8">
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500">
+                    {featuredPost.category ? (
+                      <span className="rounded-full bg-neutral-100 px-3 py-1 font-medium text-neutral-700">
+                        {featuredPost.category}
+                      </span>
+                    ) : null}
+                    <time dateTime={featuredPost.date}>
+                      {formatDate(featuredPost.date)}
+                    </time>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
+                      {featuredPost.title}
+                    </h2>
+                    <p className="text-base leading-7 text-neutral-600 sm:text-lg">
+                      {featuredPost.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-6 text-sm font-medium text-[#35542f]">
+                  Noticia destacada
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <section className="space-y-4">
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="text-xl font-semibold text-neutral-950 sm:text-2xl">
+                Más actualidad
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-[#5f5950] sm:text-lg sm:leading-8">
-                La sección de noticias está pensada para reunir avances,
-                aprendizajes y presencia pública de VERDESAL. No se plantea como
-                un simple listado de publicaciones, sino como una forma de
-                explicar mejor cómo evoluciona el proyecto y qué valor aporta.
-              </p>
-            </article>
-
-            <aside className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Criterio editorial
-              </p>
-              <ul className="mt-5 space-y-4">
-                {criteria.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-[1.5rem] border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm leading-6 text-neutral-700 sm:text-base"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          </section>
-
-          <section className="space-y-6">
-            <div className="max-w-3xl space-y-3">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Qué encontrarás aquí
-              </p>
-              <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                Noticias conectadas con el sentido del proyecto
-              </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                La actualidad de VERDESAL debe ayudar a entender mejor su
-                dimensión agrícola, técnica y comercial. Esa es la lógica que
-                ordena esta sección.
+              <p className="text-sm text-neutral-500">
+                {newsItems.length} publicaciones
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {sections.map((section) => (
+              {secondaryPosts.map((post) => (
                 <article
-                  key={section.title}
-                  className="rounded-[1.75rem] border border-neutral-200 bg-white p-6"
+                  key={`${post.title}-${post.date}`}
+                  className="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
                 >
-                  <h3 className="text-lg font-semibold text-neutral-950">
-                    {section.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {section.description}
-                  </p>
+                  {post.image ? (
+                    <div className="relative aspect-4/3 bg-neutral-100">
+                      <Image
+                        src={post.image}
+                        alt={`Imagen de ${post.title}`}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                    </div>
+                  ) : null}
+
+                  <div className="space-y-4 p-5">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500">
+                      {post.category ? (
+                        <span className="rounded-full bg-neutral-100 px-3 py-1 font-medium text-neutral-700">
+                          {post.category}
+                        </span>
+                      ) : null}
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-semibold text-neutral-950">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm leading-6 text-neutral-600 sm:text-base">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
                 </article>
               ))}
-            </div>
-          </section>
-
-          <section className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 sm:p-8 lg:p-10">
-            <div className="max-w-3xl space-y-3">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Próximos contenidos
-              </p>
-              <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                La sección crecerá desde el proyecto hacia el producto
-              </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                Cuando esta página incorpore publicaciones reales, la prioridad
-                seguirá siendo clara: primero contexto de proyecto y cultivo,
-                después innovación aplicada y finalmente visibilidad de producto
-                y usos.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {nextContent.map((item) => (
-                <article
-                  key={item.step}
-                  className="rounded-[1.5rem] border border-neutral-200 bg-white p-5 sm:p-6"
-                >
-                  <p className="text-sm font-medium text-[#35542f]">
-                    {item.step}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-neutral-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="grid gap-6 rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
-            <div className="space-y-4">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Mientras tanto
-              </p>
-              <h2 className="max-w-2xl text-2xl tracking-tight text-[#35542f] sm:text-3xl">
-                Si quieres entender mejor la actualidad del proyecto, empieza
-                por sus bases y por el producto.
-              </h2>
-              <p className="max-w-2xl text-base leading-7 text-[#4f4a42]">
-                Así la futura sección de noticias tendrá más contexto: primero
-                conoces el proyecto, después ves las plantas y entiendes mejor
-                cada novedad cuando llegue.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
-                href="/quienes-somos"
-                className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-              >
-                Conocer el proyecto
-              </Link>
-              <Link
-                href="/productos"
-                className="inline-flex items-center justify-center rounded-full border border-[#b8aa97] bg-white/70 px-6 py-3 text-sm font-medium text-[#35542f] transition hover:bg-white"
-              >
-                Ver productos
-              </Link>
             </div>
           </section>
         </div>

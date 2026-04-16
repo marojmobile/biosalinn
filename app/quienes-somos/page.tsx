@@ -1,202 +1,226 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
-import { PageHeader } from "@/components/shared/page-header";
 import { siteConfig } from "@/content/site-config";
 
-const pillars = [
+const teamMembers = [
   {
-    title: "Proyecto agrícola innovador",
-    description:
-      "VERDESAL parte de una pregunta concreta: cómo cultivar con sentido en entornos salinos y convertir esa realidad en una oportunidad productiva.",
+    name: "Alicia",
+    role: "Impulso del proyecto",
+    bio: "Aporta la visión de conjunto y la sensibilidad para traducir el trabajo agrícola en una propuesta comprensible, cuidada y conectada con el territorio.",
   },
   {
-    title: "Base científica y agronómica",
-    description:
-      "Trabajamos desde la observación, la experimentación y el conocimiento técnico para validar cultivos halófitos útiles y viables.",
-  },
-  {
-    title: "Valor gastronómico real",
-    description:
-      "Las plantas no se presentan como curiosidad, sino como producto: comprensibles, cocinables y con aplicaciones claras para restauración y retail.",
+    name: "Jordi",
+    role: "Base técnica y agronómica",
+    bio: "Sostiene la dimensión experimental del proyecto, vinculando observación, cultivo y validación de plantas halófitas con una mirada práctica.",
   },
 ];
 
-const approach = [
-  {
-    step: "01",
-    title: "Investigamos el terreno",
-    description:
-      "Analizamos las posibilidades del cultivo biosalino desde una mirada práctica, ligada al territorio y a sus condiciones reales.",
-  },
-  {
-    step: "02",
-    title: "Cultivamos con criterio",
-    description:
-      "Seleccionamos plantas halófitas con interés agrícola y gastronómico, priorizando aquellas que pueden convertirse en producto comprensible.",
-  },
-  {
-    step: "03",
-    title: "Demostramos su uso",
-    description:
-      "La cocina entra como validación y demostración de valor, ayudando a visualizar cómo estas plantas pueden integrarse en propuestas reales.",
-  },
-];
-
-const facts = [
-  "Cultivo de plantas halófitas comestibles",
-  "Enfoque mobile-first también en el relato de marca",
-  "Relación entre agricultura, ciencia y cocina",
+const values = [
+  "Agricultura biosalina",
+  "Mirada agroecológica",
+  "Aprendizaje desde el territorio",
+  "Experimentación aplicada",
+  "Relación natural con la gastronomía",
 ];
 
 export const metadata: Metadata = {
   title: `Quiénes somos | ${siteConfig.name}`,
   description:
-    "Conoce el origen de VERDESAL: un proyecto agrícola que une cultivo biosalino, base científica y valor gastronómico.",
+    "Conoce el origen de VERDESAL, las personas detrás del proyecto y su forma de unir agricultura biosalina, ciencia y aplicación gastronómica.",
 };
 
 export default function QuienesSomosPage() {
   return (
     <section className="py-10 sm:py-14">
       <PageContainer>
-        <PageHeader
-          title="Quiénes somos"
-          description="VERDESAL es un proyecto agrícola que explora el cultivo de plantas halófitas comestibles con base científica y vocación gastronómica."
-        />
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-5">
+            <p className="text-xs uppercase tracking-[0.32em] text-[#8d7a63]">
+              Quiénes somos
+            </p>
 
-        <div className="space-y-10 sm:space-y-14">
-          <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-            <article className="rounded-[2rem] bg-[#f4f1ec] p-6 sm:p-8 lg:p-10">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                El proyecto
-              </p>
-              <h2 className="mt-4 max-w-2xl text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                Agricultura biosalina con una mirada clara: cultivar, validar y
-                dar valor.
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-[#5f5950] sm:text-lg sm:leading-8">
-                VERDESAL nace para demostrar que los entornos salinos pueden dar
-                lugar a nuevos cultivos y nuevas formas de producir. El proyecto
-                conecta campo, conocimiento técnico y aplicación culinaria para
-                convertir las plantas halófitas en una propuesta creíble y
-                útil.
-              </p>
-            </article>
+            <h1 className="max-w-3xl text-4xl tracking-tight text-neutral-950 sm:text-5xl">
+              VERDESAL nace del deseo de cultivar de otra manera y demostrar que
+              los suelos salinos también pueden generar valor.
+            </h1>
 
-            <aside className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
+            <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
+              No es solo una idea sobre nuevas plantas. Es un proyecto real,
+              ligado al Empordà, a la experimentación agronómica y a la búsqueda
+              de una agricultura capaz de adaptarse, producir y abrir nuevas
+              posibilidades de uso.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#f4f1ec] p-6 sm:p-8">
+            <div className="absolute -right-6 top-6 h-20 w-20 rounded-[40%] bg-[#48c7bb]/40" />
+            <div className="absolute -left-8 bottom-0 h-28 w-28 rounded-[45%] bg-[#35542f]" />
+            <div className="relative space-y-4">
               <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Qué nos define
+                El origen
               </p>
-              <ul className="mt-5 space-y-4">
-                {facts.map((fact) => (
-                  <li
-                    key={fact}
-                    className="rounded-[1.5rem] border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm leading-6 text-neutral-700 sm:text-base"
-                  >
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+              <p className="text-lg leading-8 text-[#4f4a42]">
+                VERDESAL surge al observar que las condiciones salinas del
+                entorno no tenían por qué entenderse solo como una limitación.
+                También podían ser el punto de partida para un cultivo distinto,
+                con base científica y potencial real de producto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 space-y-12 sm:mt-14 sm:space-y-16">
+          <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
+              <Image
+                src="/images/plants/placeholder.jpg"
+                alt="Entorno y origen de VERDESAL"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+                  Nuestra historia
+                </p>
+                <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
+                  Por qué halófitas, por qué ahora y por qué aquí
+                </h2>
+              </div>
+
+              <div className="space-y-5 text-base leading-7 text-neutral-600">
+                <p>
+                  El proyecto nace de una pregunta sencilla pero profunda: qué
+                  puede pasar si en lugar de luchar contra la salinidad del
+                  entorno aprendemos a trabajar con ella. A partir de ahí,
+                  VERDESAL empieza a explorar el cultivo de halófitas como una
+                  vía agrícola coherente con el territorio.
+                </p>
+                <p>
+                  Esa exploración no se queda en la teoría. Se traduce en
+                  ensayo, observación, selección de plantas y búsqueda de formas
+                  reales de presentar el producto. La ciencia aporta criterio;
+                  el campo aporta verdad; la cocina aparece como una manera de
+                  demostrar uso y valor.
+                </p>
+                <p>
+                  La visión de VERDESAL combina estas tres capas sin artificio:
+                  agricultura, experimentación y aplicación. No se trata de
+                  vestir un discurso verde, sino de construir una propuesta que
+                  tenga sentido productivo y cultural al mismo tiempo.
+                </p>
+              </div>
+            </div>
           </section>
 
           <section className="space-y-6">
             <div className="max-w-3xl space-y-3">
               <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Nuestra base
+                Qué hacemos
               </p>
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                Un proyecto construido sobre tres capas complementarias
+                Un proyecto que se mueve entre cultivo, conocimiento y uso real
               </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                La prioridad es agrícola y técnica. La dimensión gastronómica
-                aparece para hacer visible el valor del producto, no para
-                sustituirlo.
-              </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {pillars.map((pillar) => (
-                <article
-                  key={pillar.title}
-                  className="rounded-[1.75rem] border border-neutral-200 bg-white p-6"
-                >
-                  <h3 className="text-lg font-semibold text-neutral-950">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {pillar.description}
-                  </p>
-                </article>
-              ))}
+            <div className="grid gap-6 lg:grid-cols-3">
+              <article className="space-y-3 rounded-[1.75rem] border border-neutral-200 bg-white p-6">
+                <h3 className="text-xl font-semibold text-neutral-950">
+                  Agricultura
+                </h3>
+                <p className="text-sm leading-6 text-neutral-600 sm:text-base">
+                  Cultivamos plantas halófitas desde una lógica de adaptación al
+                  territorio, observando cómo responder mejor a condiciones
+                  salinas y cómo convertir ese cultivo en algo viable y legible.
+                </p>
+              </article>
+
+              <article className="space-y-3 rounded-[1.75rem] border border-neutral-200 bg-white p-6">
+                <h3 className="text-xl font-semibold text-neutral-950">
+                  Investigación e innovación
+                </h3>
+                <p className="text-sm leading-6 text-neutral-600 sm:text-base">
+                  Probamos, ajustamos y aprendemos. La innovación aquí no es un
+                  eslogan, sino una forma de trabajar con método y curiosidad
+                  para validar cultivos con futuro.
+                </p>
+              </article>
+
+              <article className="space-y-3 rounded-[1.75rem] border border-neutral-200 bg-white p-6">
+                <h3 className="text-xl font-semibold text-neutral-950">
+                  Gastronomía y aplicación culinaria
+                </h3>
+                <p className="text-sm leading-6 text-neutral-600 sm:text-base">
+                  La cocina ayuda a mostrar el potencial del producto. No ocupa
+                  el centro del proyecto, pero sí permite explicar mejor cómo
+                  estas plantas pueden formar parte de usos reales.
+                </p>
+              </article>
             </div>
           </section>
 
-          <section className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 sm:p-8 lg:p-10">
-            <div className="max-w-3xl space-y-3">
+          <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Cómo trabajamos
+                Quién hay detrás
               </p>
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                Del cultivo a la comprensión del producto
+                Personas que sostienen una idea convertida en trabajo real
               </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                El recorrido de VERDESAL busca traducir investigación y cultivo
-                en una propuesta fácil de entender para cliente, distribuidor o
-                cocina profesional.
-              </p>
             </div>
 
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {approach.map((item) => (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {teamMembers.map((member) => (
                 <article
-                  key={item.step}
-                  className="rounded-[1.5rem] border border-neutral-200 bg-white p-5 sm:p-6"
+                  key={member.name}
+                  className="rounded-[1.75rem] border border-neutral-200 bg-[#f8f6f2] p-6"
                 >
                   <p className="text-sm font-medium text-[#35542f]">
-                    {item.step}
+                    {member.role}
                   </p>
-                  <h3 className="mt-3 text-lg font-semibold text-neutral-950">
-                    {item.title}
+                  <h3 className="mt-2 text-2xl font-semibold text-neutral-950">
+                    {member.name}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {item.description}
+                  <p className="mt-4 text-sm leading-6 text-neutral-600 sm:text-base">
+                    {member.bio}
                   </p>
                 </article>
               ))}
             </div>
           </section>
 
-          <section className="grid gap-6 rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
+          <section className="grid gap-8 rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Explorar VERDESAL
+                Nuestro enfoque
               </p>
               <h2 className="max-w-2xl text-2xl tracking-tight text-[#35542f] sm:text-3xl">
-                El proyecto se entiende mejor cuando ves las plantas y cómo se
-                aplican.
+                Biosalina, agroecológica, regenerativa y siempre conectada con
+                la realidad del cultivo.
               </h2>
-              <p className="max-w-2xl text-base leading-7 text-[#4f4a42]">
-                Productos y recetas ayudan a aterrizar el trabajo de fondo:
-                primero el cultivo y el valor del producto, después su uso en
-                cocina.
-              </p>
+              <div className="flex flex-wrap gap-2">
+                {values.map((value) => (
+                  <span
+                    key={value}
+                    className="rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-[#35542f]"
+                  >
+                    {value}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
-                href="/productos"
-                className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-              >
-                Ver productos
-              </Link>
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center rounded-full border border-[#b8aa97] bg-white/70 px-6 py-3 text-sm font-medium text-[#35542f] transition hover:bg-white"
-              >
-                Contactar
-              </Link>
-            </div>
+            <Link
+              href="/productos"
+              className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+            >
+              Descubrir las plantas
+            </Link>
           </section>
         </div>
       </PageContainer>

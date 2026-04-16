@@ -1,198 +1,165 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
-import { PageHeader } from "@/components/shared/page-header";
 import { siteConfig } from "@/content/site-config";
 
-const channels = [
+const salePoints = [
   {
-    title: "Restauración",
+    name: "Restaurant Can Roca de la Sal",
+    type: "Restaurante",
+    locality: "Castelló d'Empúries",
     description:
-      "Plantas pensadas para aportar valor en cocina profesional, con identidad propia y aplicaciones comprensibles desde el primer contacto.",
+      "Cocina de producto con propuestas estacionales donde las halófitas se integran en carta.",
+    href: "#",
+    actionLabel: "Ver disponibilidad",
   },
   {
-    title: "Distribución especializada",
+    name: "Empordà Gourmet",
+    type: "Tienda gourmet",
+    locality: "Figueres",
     description:
-      "Un canal natural para trasladar el proyecto hacia cliente profesional, retail selectivo o propuestas ligadas a producto diferencial.",
+      "Selección de productos locales y vegetales singulares para público especializado.",
+    href: "#",
+    actionLabel: "Consultar tienda",
   },
   {
-    title: "Puntos de venta afines",
+    name: "Mercat Verd Setmanal",
+    type: "Mercado",
+    locality: "Roses",
     description:
-      "Espacios donde el relato de agricultura biosalina, innovación aplicada y valor gastronómico pueda entenderse con claridad.",
-  },
-];
-
-const criteria = [
-  "Venta alineada con el sentido del proyecto y del producto",
-  "Presentación clara de cada planta y su potencial de uso",
-  "Canales capaces de explicar valor agrícola y gastronómico",
-];
-
-const howItWorks = [
-  {
-    step: "01",
-    title: "Conocer el producto",
-    description:
-      "Antes de pensar en punto de venta, es importante entender qué planta es cada una, cómo se presenta y qué tipo de valor ofrece.",
+      "Punto de encuentro semanal con producto fresco y enfoque en productores del territorio.",
+    href: "#",
+    actionLabel: "Ver horario",
   },
   {
-    step: "02",
-    title: "Evaluar el encaje comercial",
+    name: "Distribuciones Costa Brava Fresh",
+    type: "Distribuidor",
+    locality: "Girona",
     description:
-      "No todos los canales son iguales: el producto necesita un contexto donde pueda explicarse bien y conservar su singularidad.",
+      "Canal orientado a hostelería y negocios que buscan producto diferencial y de proximidad.",
+    href: "/contacto",
+    actionLabel: "Solicitar contacto",
   },
   {
-    step: "03",
-    title: "Abrir la conversación",
+    name: "La Botiga del Port",
+    type: "Tienda especializada",
+    locality: "L'Escala",
     description:
-      "Si existe interés en distribución o presencia comercial, el siguiente paso natural es contactar para valorar formato, enfoque y posibilidades.",
+      "Espacio de producto local donde descubrir vegetales con identidad y valor gastronómico.",
+    href: "#",
+    actionLabel: "Más información",
+  },
+  {
+    name: "Cuina Oberta Lab",
+    type: "Espacio gastronómico",
+    locality: "Barcelona",
+    description:
+      "Entorno de cocina y divulgación gastronómica donde el producto se presenta en contexto de uso.",
+    href: "#",
+    actionLabel: "Ver espacio",
   },
 ];
 
 export const metadata: Metadata = {
   title: `Puntos de venta | ${siteConfig.name}`,
   description:
-    "Información sobre distribución y puntos de venta de VERDESAL, con foco en producto, encaje comercial y contexto agrícola.",
+    "Encuentra dónde comprar o descubrir los productos VERDESAL en tiendas, restaurantes, mercados y distribución especializada.",
 };
 
 export default function PuntosDeVentaPage() {
   return (
     <section className="py-10 sm:py-14">
       <PageContainer>
-        <PageHeader
-          title="Puntos de venta"
-          description="Una sección pensada para orientar cómo puede encontrarse o distribuirse el producto, manteniendo siempre el contexto del proyecto."
-        />
+        <div className="space-y-4 border-b border-neutral-200 pb-8 sm:pb-10">
+          <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
+            Puntos de venta
+          </h1>
+          <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg">
+            Encuentra dónde comprar o descubrir nuestros productos.
+          </p>
+        </div>
 
-        <div className="space-y-10 sm:space-y-14">
-          <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-            <article className="rounded-[2rem] bg-[#f4f1ec] p-6 sm:p-8 lg:p-10">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Distribución
-              </p>
-              <h2 className="mt-4 max-w-2xl text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                El punto de venta debe ayudar a explicar el producto, no solo a
-                colocarlo.
+        <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-sm leading-6 text-neutral-600 sm:p-6 sm:text-base">
+            Consulta algunos espacios donde el producto puede encontrarse o
+            descubrirse en contexto de compra, cocina o distribución. La
+            disponibilidad puede variar según temporada y formato.
+          </div>
+
+          <section className="space-y-4">
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="text-xl font-semibold text-neutral-950 sm:text-2xl">
+                Listado de puntos de venta
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-[#5f5950] sm:text-lg sm:leading-8">
-                En VERDESAL la distribución tiene sentido cuando respeta la
-                lógica del proyecto: primero una base agrícola sólida, después
-                un producto bien entendido y finalmente su encaje comercial. Por
-                eso esta página funciona hoy como guía y contexto, más que como
-                un listado cerrado de ubicaciones.
-              </p>
-            </article>
-
-            <aside className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Criterios
-              </p>
-              <ul className="mt-5 space-y-4">
-                {criteria.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-[1.5rem] border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm leading-6 text-neutral-700 sm:text-base"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          </section>
-
-          <section className="space-y-6">
-            <div className="max-w-3xl space-y-3">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Canales afines
-              </p>
-              <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                Dónde encaja mejor una propuesta como VERDESAL
-              </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                Los puntos de venta no se entienden solo por ubicación, sino por
-                su capacidad para presentar bien el producto y su singularidad.
+              <p className="text-sm text-neutral-500">
+                {salePoints.length} ubicaciones
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {channels.map((channel) => (
+            <div className="grid gap-4">
+              {salePoints.map((point) => (
                 <article
-                  key={channel.title}
-                  className="rounded-[1.75rem] border border-neutral-200 bg-white p-6"
+                  key={`${point.name}-${point.locality}`}
+                  className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6"
                 >
-                  <h3 className="text-lg font-semibold text-neutral-950">
-                    {channel.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {channel.description}
-                  </p>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="min-w-0 space-y-3">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
+                          {point.type}
+                        </span>
+                        <span className="rounded-full border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600">
+                          {point.locality}
+                        </span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-neutral-950 sm:text-xl">
+                          {point.name}
+                        </h3>
+                        {point.description ? (
+                          <p className="max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
+                            {point.description}
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div className="sm:shrink-0">
+                      <Link
+                        href={point.href}
+                        className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-4 py-2.5 text-sm font-medium text-neutral-900 transition hover:border-neutral-400 hover:bg-neutral-50"
+                      >
+                        {point.actionLabel}
+                      </Link>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
           </section>
 
-          <section className="rounded-[2rem] border border-neutral-200 bg-neutral-50 p-6 sm:p-8 lg:p-10">
-            <div className="max-w-3xl space-y-3">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Cómo avanzar
-              </p>
-              <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                Del interés comercial a una conversación útil
-              </h2>
-              <p className="text-base leading-7 text-neutral-600">
-                Mientras no exista un directorio público de puntos de venta, la
-                mejor forma de trabajar esta sección es orientar bien el
-                recorrido comercial y facilitar el siguiente paso.
-              </p>
-            </div>
+          <section className="rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+                  Distribución
+                </p>
+                <h2 className="max-w-2xl text-2xl tracking-tight text-[#35542f] sm:text-3xl">
+                  ¿Quieres ofrecer VERDESAL en tu negocio?
+                </h2>
+                <p className="max-w-2xl text-base leading-7 text-[#4f4a42]">
+                  Si estás valorando incorporar nuestras plantas en tienda,
+                  restauración o distribución, podemos estudiar contigo el mejor
+                  encaje.
+                </p>
+              </div>
 
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {howItWorks.map((item) => (
-                <article
-                  key={item.step}
-                  className="rounded-[1.5rem] border border-neutral-200 bg-white p-5 sm:p-6"
-                >
-                  <p className="text-sm font-medium text-[#35542f]">
-                    {item.step}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-neutral-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="grid gap-6 rounded-[2rem] bg-[#e8dfd2] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
-            <div className="space-y-4">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Siguiente paso
-              </p>
-              <h2 className="max-w-2xl text-2xl tracking-tight text-[#35542f] sm:text-3xl">
-                Si quieres explorar distribución o presencia comercial, empieza
-                por el producto y luego abre la conversación.
-              </h2>
-              <p className="max-w-2xl text-base leading-7 text-[#4f4a42]">
-                Así será más fácil valorar encaje, narrativa comercial y forma
-                de presentación desde una base compartida y realista.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
-                href="/productos"
-                className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-              >
-                Ver productos
-              </Link>
               <Link
                 href="/contacto"
-                className="inline-flex items-center justify-center rounded-full border border-[#b8aa97] bg-white/70 px-6 py-3 text-sm font-medium text-[#35542f] transition hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
               >
-                Contactar
+                Contactar para distribución
               </Link>
             </div>
           </section>
