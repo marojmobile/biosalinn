@@ -1,13 +1,15 @@
 import { plants } from "@/data/plants";
+import { normalizePlantImages } from "@/lib/plant-images";
 
 export function getPlants() {
-  return plants;
+  return plants.map(normalizePlantImages);
 }
 
 export function getFeaturedPlants() {
-  return plants.filter((plant) => plant.featured);
+  return getPlants().filter((plant) => plant.featured);
 }
 
 export function getPlantBySlug(slug: string) {
-  return plants.find((plant) => plant.slug === slug) ?? null;
+  const plant = plants.find((candidate) => candidate.slug === slug);
+  return plant ? normalizePlantImages(plant) : null;
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Plant } from "@/types/plant";
 import { PlantRelatedRecipes } from "@/components/plants/plant-related-recipes";
 
@@ -20,7 +21,7 @@ export function PlantDetail({ plant }: PlantDetailProps) {
       <div className="space-y-8 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10 lg:space-y-0">
         <div className="order-1 space-y-6 lg:order-2">
           <div className="space-y-3">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#8d7a63]">
               Producto
             </p>
 
@@ -39,43 +40,73 @@ export function PlantDetail({ plant }: PlantDetailProps) {
             {plant.description}
           </p>
 
-          {plant.culinaryUses?.length ? (
-            <div className="space-y-3">
-              <h2 className="text-lg font-semibold text-neutral-950">
-                Usos culinarios
-              </h2>
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-6">
+            <div className="space-y-5">
+              <div className="space-y-2">
+                <h2 className="text-xl font-semibold text-neutral-950">
+                  Una planta pensada para cocina
+                </h2>
+                <p className="text-sm leading-6 text-neutral-600 sm:text-base">
+                  Descubre cómo integrarla en carta, retail o propuestas
+                  gastronómicas a partir de sus usos más naturales.
+                </p>
+              </div>
 
-              <ul className="flex flex-wrap gap-2">
-                {plant.culinaryUses.map((use) => (
-                  <li
-                    key={use}
-                    className="rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-700"
-                  >
-                    {use}
-                  </li>
-                ))}
-              </ul>
+              {plant.culinaryUses?.length ? (
+                <div className="space-y-3">
+                  <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500">
+                    Usos culinarios
+                  </h3>
+
+                  <ul className="flex flex-wrap gap-2">
+                    {plant.culinaryUses.map((use) => (
+                      <li
+                        key={use}
+                        className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700"
+                      >
+                        {use}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {plant.seasons?.length ? (
+                <div className="space-y-3">
+                  <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500">
+                    Temporada
+                  </h3>
+
+                  <ul className="flex flex-wrap gap-2">
+                    {plant.seasons.map((season) => (
+                      <li
+                        key={season}
+                        className="rounded-full bg-white px-3 py-1 text-sm text-neutral-700"
+                      >
+                        {season}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+                <Link
+                  href={`/recetas?planta=${plant.slug}`}
+                  className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#2d4728]"
+                >
+                  Ver recetas con esta planta
+                </Link>
+
+                <Link
+                  href="#recetas-relacionadas"
+                  className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition hover:border-neutral-400 hover:bg-white"
+                >
+                  Inspiración culinaria
+                </Link>
+              </div>
             </div>
-          ) : null}
-
-          {plant.seasons?.length ? (
-            <div className="space-y-3">
-              <h2 className="text-lg font-semibold text-neutral-950">
-                Temporada
-              </h2>
-
-              <ul className="flex flex-wrap gap-2">
-                {plant.seasons.map((season) => (
-                  <li
-                    key={season}
-                    className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-700"
-                  >
-                    {season}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          </div>
         </div>
 
         <div className="order-2 space-y-4 lg:order-1">
@@ -130,7 +161,7 @@ export function PlantDetail({ plant }: PlantDetailProps) {
         </div>
       </div>
 
-      <PlantRelatedRecipes plantSlug={plant.slug} />
+      <PlantRelatedRecipes plant={plant} />
     </div>
   );
 }
