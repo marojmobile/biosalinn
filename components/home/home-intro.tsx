@@ -61,7 +61,7 @@ export function HomeIntro() {
           </div>
 
           <Link
-            href="/nosotros"
+            href="/quienes-somos"
             className="inline-flex items-center justify-center rounded-full border border-[#b8aa97] px-5 py-3 text-sm font-medium text-[#35542f] transition hover:bg-white"
           >
             Conocer el proyecto
