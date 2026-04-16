@@ -3,27 +3,28 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
 import { siteConfig } from "@/content/site-config";
 
-const contactEmail = "info@biosalinn.com";
-
 const enquiryTypes = [
   {
     title: "Restauración",
-    description: "Para cocinas y espacios gastronómicos que quieran trabajar el producto.",
+    description:
+      "Estamos preparando el canal para restaurantes, cocinas y espacios gastronómicos.",
   },
   {
     title: "Distribución",
-    description: "Para tiendas, canales especializados y puntos de venta.",
+    description:
+      "Muy pronto activaremos la vía de contacto para tiendas, distribuidores y puntos de venta.",
   },
   {
     title: "Colaboraciones y prensa",
-    description: "Para proyectos, medios, divulgación o iniciativas compartidas.",
+    description:
+      "También habilitaremos un canal específico para proyectos, medios y colaboraciones.",
   },
 ];
 
 export const metadata: Metadata = {
   title: `Contacto | ${siteConfig.name}`,
   description:
-    "Contacto comercial de VERDESAL para restauración, distribución, colaboraciones y consultas sobre producto.",
+    "Página temporal de contacto de VERDESAL mientras se activan los nuevos canales corporativos para producto, distribución y colaboraciones.",
 };
 
 export default function ContactoPage() {
@@ -35,11 +36,12 @@ export default function ContactoPage() {
             Contacto
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
-            Hablemos
+            Canales de contacto en actualización
           </h1>
           <p className="max-w-2xl text-base leading-7 text-neutral-600 sm:text-lg">
-            Escríbenos si quieres trabajar el producto, valorar distribución o
-            abrir una colaboración con VERDESAL.
+            Estamos terminando la nueva web de VERDESAL y preparando los
+            canales corporativos para producto, distribución y colaboraciones.
+            En breve estarán disponibles con información actualizada.
           </p>
         </div>
 
@@ -66,113 +68,51 @@ export default function ContactoPage() {
           </section>
 
           <section className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-            <div className="rounded-[2rem] border border-neutral-200 bg-white p-6 sm:p-8">
-              <div className="space-y-2">
+            <div className="rounded-[2rem] border border-[#ddd2c5] bg-[#f4f1ec] p-6 sm:p-8">
+              <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                  Formulario
+                  Mensaje temporal
                 </p>
                 <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-3xl">
-                  Cuéntanos qué necesitas
+                  Muy pronto activaremos el contacto corporativo
                 </h2>
+                <p className="max-w-2xl text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
+                  Estamos ajustando los canales definitivos para atender
+                  consultas de restauración, distribución, colaboraciones y
+                  prensa con una información más clara y actualizada.
+                </p>
               </div>
 
-              <form className="mt-6 space-y-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="space-y-2">
-                    <span className="text-sm font-medium text-neutral-900">
-                      Nombre
-                    </span>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Tu nombre"
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-500"
-                    />
-                  </label>
-
-                  <label className="space-y-2">
-                    <span className="text-sm font-medium text-neutral-900">
-                      Email
-                    </span>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="tu@email.com"
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-500"
-                    />
-                  </label>
-                </div>
-
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-neutral-900">
-                    Tipo de consulta
-                  </span>
-                  <select
-                    name="type"
-                    defaultValue=""
-                    className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition focus:border-neutral-500"
-                  >
-                    <option value="" disabled>
-                      Selecciona una opción
-                    </option>
-                    <option value="restauracion">Restauración</option>
-                    <option value="distribucion">Distribución</option>
-                    <option value="colaboraciones">
-                      Colaboraciones / prensa / proyectos
-                    </option>
-                  </select>
-                </label>
-
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-neutral-900">
-                    Mensaje
-                  </span>
-                  <textarea
-                    name="message"
-                    rows={6}
-                    placeholder="Explícanos brevemente tu interés, tu negocio o la colaboración que quieres valorar."
-                    className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-500"
-                  />
-                </label>
-
-                <div className="space-y-3 border-t border-neutral-200 pt-5">
-                  <button
-                    type="button"
-                    className="inline-flex items-center justify-center rounded-full bg-[#35542f] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
-                  >
-                    Enviar consulta
-                  </button>
-
-                  <p className="text-sm leading-6 text-neutral-500">
-                    El formulario queda preparado para conectarlo al canal
-                    definitivo de contacto.
-                  </p>
-                </div>
-              </form>
+              <div className="mt-6 rounded-[1.5rem] border border-white/70 bg-white/70 p-5 sm:p-6">
+                <p className="text-sm font-medium text-neutral-900">
+                  Mientras tanto
+                </p>
+                <p className="mt-2 text-sm leading-6 text-neutral-600 sm:text-base">
+                  Esta página queda en modo temporal para evitar formularios o
+                  accesos que todavía no podríamos atender correctamente.
+                </p>
+              </div>
             </div>
 
             <aside className="space-y-4">
-              <div className="rounded-[2rem] bg-[#f4f1ec] p-6 sm:p-8">
+              <div className="rounded-[2rem] bg-white p-6 ring-1 ring-neutral-200 sm:p-8">
                 <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                  Contacto directo
+                  Estado actual
                 </p>
 
                 <div className="mt-5 space-y-5">
                   <div>
                     <p className="text-sm font-medium text-neutral-900">
-                      Email
+                      Canales corporativos
                     </p>
-                    <a
-                      href={`mailto:${contactEmail}`}
-                      className="mt-2 inline-flex text-base font-medium text-[#35542f] hover:underline"
-                    >
-                      {contactEmail}
-                    </a>
+                    <p className="mt-2 text-sm leading-6 text-neutral-600 sm:text-base">
+                      Email y línea de atención disponibles en breve.
+                    </p>
                   </div>
 
                   <div>
                     <p className="text-sm font-medium text-neutral-900">
-                      Ubicación
+                      Ubicación del proyecto
                     </p>
                     <p className="mt-2 text-sm leading-6 text-neutral-600 sm:text-base">
                       Castelló d&apos;Empúries
@@ -183,24 +123,27 @@ export default function ContactoPage() {
                     <p className="text-sm font-medium text-neutral-900">
                       Web
                     </p>
-                    <a
-                      href={siteConfig.url}
-                      className="mt-2 inline-flex text-sm text-[#35542f] hover:underline sm:text-base"
-                    >
+                    <p className="mt-2 text-sm text-neutral-600 sm:text-base">
                       {siteConfig.url.replace(/^https?:\/\//, "")}
-                    </a>
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-[1.5rem] border border-neutral-200 bg-white p-6">
                 <h3 className="text-lg font-semibold text-neutral-950">
-                  Para avanzar más rápido
+                  Qué estamos preparando
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  <li>Indica si tu consulta es comercial, gastronómica o técnica.</li>
-                  <li>Cuéntanos qué tipo de negocio o proyecto tienes.</li>
-                  <li>Explica si buscas producto, distribución o colaboración.</li>
+                  <li>
+                    Un canal claro para consultas sobre producto y restauración.
+                  </li>
+                  <li>
+                    Información actualizada para distribución y puntos de venta.
+                  </li>
+                  <li>
+                    Una vía específica para colaboraciones, medios y proyectos.
+                  </li>
                 </ul>
               </div>
 
@@ -208,7 +151,7 @@ export default function ContactoPage() {
                 href="/productos"
                 className="inline-flex items-center text-sm font-medium text-[#35542f] hover:underline"
               >
-                Ver productos antes de escribir
+                Descubrir las plantas mientras activamos el contacto
               </Link>
             </aside>
           </section>
