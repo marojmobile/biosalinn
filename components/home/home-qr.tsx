@@ -14,9 +14,9 @@ export function HomeQR() {
           </h2>
 
           <p className="max-w-2xl text-base leading-7 text-white/80">
-            La estrategia QR es una decisión funcional clave: cada planta puede
-            llevar al usuario a una vista móvil de recetas filtradas, rápida de
-            entender y lista para usar.
+            Queremos que cada planta se entienda rápido y bien. El acceso desde
+            QR conecta producto, contexto y recetas en una vista clara, útil y
+            pensada para móvil.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -41,28 +41,30 @@ export function HomeQR() {
             <div className="rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-medium">1. Escanea</p>
               <p className="mt-2 text-sm leading-6 text-white/75">
-                Acceso directo desde el envase, sin buscar nada manualmente.
+                Accede directamente desde el envase sin tener que buscar nada.
               </p>
             </div>
 
             <div className="rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-medium">2. Entiende</p>
               <p className="mt-2 text-sm leading-6 text-white/75">
-                Qué planta es, cómo sabe y por qué puede interesarte.
+                Descubre qué planta es, cómo se usa y qué la hace especial.
               </p>
             </div>
 
             <div className="rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-medium">3. Cocina</p>
               <p className="mt-2 text-sm leading-6 text-white/75">
-                Recetas relacionadas y usos culinarios visibles en segundos.
+                Encuentra recetas y aplicaciones culinarias visibles en pocos
+                segundos.
               </p>
             </div>
 
             <div className="rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-medium">4. Conecta</p>
               <p className="mt-2 text-sm leading-6 text-white/75">
-                Desde la receta al producto y del producto a la marca.
+                Del producto al proyecto, con una lectura más completa de todo
+                lo que hay detrás.
               </p>
             </div>
           </div>

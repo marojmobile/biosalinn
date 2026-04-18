@@ -15,15 +15,15 @@ export function HomeFeaturedPlants() {
               Nuestras plantas
             </p>
             <h2 className="max-w-md text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-              El corazón del proyecto
+              Plantas del litoral con mucho que aportar
             </h2>
           </div>
 
           <div className="space-y-4 lg:justify-self-end lg:text-right">
             <p className="max-w-2xl text-base leading-7 text-[#5f5950]">
-              Las plantas deben ocupar un lugar central en la home: son el
-              núcleo del catálogo y la base de la relación con recetas, QR y
-              producto.
+              Las halófitas crecen de forma natural en ambientes salinos y
+              concentran matices, texturas y posibilidades que van mucho más
+              allá de lo ornamental.
             </p>
 
             <Link

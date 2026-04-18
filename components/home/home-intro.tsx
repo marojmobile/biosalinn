@@ -12,50 +12,52 @@ export function HomeIntro() {
               Sobre nosotros
             </p>
             <h2 className="mt-4 max-w-sm text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-              Un proyecto agrícola diferente
+              De una inquietud personal a una huerta marina
             </h2>
             <p className="mt-5 max-w-md text-base leading-7 text-[#4f4a42]">
-              VERDESAL nace de la voluntad de cultivar en condiciones salinas
-              con una mirada práctica, ecológica y gastronómica. No se trata
-              solo de producir, sino de demostrar el valor real de estas
-              plantas.
+              VERDESAL nace de una pregunta muy concreta: qué agricultura tiene
+              sentido en un territorio donde la sal, el agua y el suelo ya no
+              se pueden mirar como antes.
             </p>
           </div>
         </div>
 
         <div className="space-y-8">
           <p className="max-w-2xl text-lg leading-8 text-[#4f4a42]">
-            La web debe comunicar primero el proyecto, después el producto y por
-            último su uso culinario. Esa jerarquía es precisamente la que define
-            vuestra estrategia actual.
+            Alicia Picazo, ingeniera técnica agrícola, llevaba tiempo buscando
+            un proyecto propio que no solo fuera viable, sino que también
+            ayudara a mejorar el entorno. La respuesta apareció al conocer las
+            halófitas y ver en ellas una manera distinta de cultivar.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3">
             <article className="rounded-[1.5rem] border border-[#ddd2c5] bg-white/80 p-5">
               <p className="text-sm font-medium text-[#35542f]">
-                Agricultura regenerativa
+                Territorio
               </p>
               <p className="mt-2 text-sm leading-6 text-[#666057]">
-                Cultivo adaptado al territorio y al agua disponible.
+                No trabajamos contra el lugar, sino con lo que realmente puede
+                crecer en él.
               </p>
             </article>
 
             <article className="rounded-[1.5rem] border border-[#ddd2c5] bg-white/80 p-5">
               <p className="text-sm font-medium text-[#35542f]">
-                Base científica
+                Halófitas
               </p>
               <p className="mt-2 text-sm leading-6 text-[#666057]">
-                Experimentación, conocimiento agronómico y divulgación.
+                Plantas adaptadas a la salinidad, con interés agronómico y valor
+                gastronómico real.
               </p>
             </article>
 
             <article className="rounded-[1.5rem] border border-[#ddd2c5] bg-white/80 p-5">
               <p className="text-sm font-medium text-[#35542f]">
-                Aplicación gastronómica
+                Cocina
               </p>
               <p className="mt-2 text-sm leading-6 text-[#666057]">
-                Plantas útiles, comprensibles y cocinables desde el primer
-                vistazo.
+                Ingredientes útiles, sabrosos y comprensibles, pensados para
+                tener sitio real en la mesa.
               </p>
             </article>
           </div>

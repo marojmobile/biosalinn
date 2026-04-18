@@ -18,16 +18,13 @@ export default function SostenibilidadEInnovacionPage() {
             Sostenibilidad e innovación
           </p>
           <h1 className="max-w-4xl text-4xl tracking-tight text-neutral-950 sm:text-5xl">
-            Una forma de cultivar pensada para responder a la salinidad, a la
-            escasez de agua dulce y a la necesidad de sistemas agrícolas más
-            adaptados.
+            Cultivar donde parecía que ya no se podía
           </h1>
           <p className="max-w-3xl text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
-            VERDESAL trabaja desde una idea concreta: si cambian las condiciones
-            del territorio, también debe cambiar la forma de producir. La
-            agricultura biosalina permite abrir una vía técnicamente rigurosa
-            para cultivar con más adaptación y más claridad sobre el valor del
-            producto.
+            Cada vez hay menos suelo fértil disponible y más problemas de
+            salinización, degradación y escasez de agua dulce. A eso se suma
+            una agricultura muy dependiente de unos pocos cultivos y de
+            recursos cada vez más tensionados.
           </p>
         </div>
 
@@ -38,41 +35,36 @@ export default function SostenibilidadEInnovacionPage() {
                 El problema
               </p>
               <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                La presión hídrica y la salinidad obligan a repensar qué se
-                cultiva y cómo se cultiva.
+                El reto no es solo producir más, sino producir mejor.
               </h2>
             </div>
 
             <div className="space-y-5 text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
               <p>
-                En muchos entornos, el agua dulce disponible es cada vez más
-                limitada y la salinidad condiciona directamente la capacidad
-                productiva del suelo. No se trata solo de una restricción
-                ambiental: también afecta a la estabilidad del cultivo y a su
-                viabilidad económica.
+                Y hacerlo también en lugares donde el modelo convencional ya no
+                responde.
               </p>
 
               <p>
-                Cuando un sistema agrícola depende de condiciones que cada vez
-                son más difíciles de sostener, deja de ser suficiente mejorar un
-                poco el método. A veces hace falta revisar desde la base qué
-                especies tienen sentido en ese contexto.
+                No basta con insistir en lo de siempre si las condiciones del
+                suelo y del agua ya no acompañan. Hace falta abrir espacio a
+                otras formas de cultivar más ajustadas al territorio real.
               </p>
 
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] bg-neutral-50 p-4">
                   <p className="text-sm font-medium text-neutral-900">
-                    Menos agua dulce
+                    Salinización
                   </p>
                 </div>
                 <div className="rounded-[1.5rem] bg-neutral-50 p-4">
                   <p className="text-sm font-medium text-neutral-900">
-                    Más condicionantes salinos
+                    Escasez de agua
                   </p>
                 </div>
                 <div className="rounded-[1.5rem] bg-neutral-50 p-4">
                   <p className="text-sm font-medium text-neutral-900">
-                    Mayor necesidad de resiliencia
+                    Suelos degradados
                   </p>
                 </div>
               </div>
@@ -86,26 +78,23 @@ export default function SostenibilidadEInnovacionPage() {
                   La solución VERDESAL
                 </p>
                 <h2 className="text-3xl tracking-tight text-[#35542f] sm:text-4xl">
-                  Trabajar con halófitas y agua salobre desde una lógica de
-                  adaptación, no de excepción.
+                  Las halófitas abren una vía distinta porque están preparadas
+                  para crecer en condiciones salinas.
                 </h2>
               </div>
 
               <div className="space-y-5 text-base leading-7 text-[#4f4a42] sm:text-lg sm:leading-8">
                 <p>
-                  Las halófitas son plantas que toleran o aprovechan condiciones
-                  salinas. Eso las convierte en un punto de partida especialmente
-                  relevante cuando lo que se busca no es forzar el territorio,
-                  sino entender con qué materiales vegetales puede trabajarse de
-                  forma más coherente.
+                  Requieren menos agua dulce y pueden crecer en terrenos que hoy
+                  se consideran marginales para la agricultura habitual. No son
+                  una promesa teórica: son plantas adaptadas de verdad a ese
+                  entorno, capaces de convertir una limitación en posibilidad.
                 </p>
 
                 <p>
-                  La agricultura biosalina no ofrece atajos. Lo que propone es
-                  una adaptación mejor fundamentada: usar agua salobre cuando el
-                  contexto lo permite, observar cómo responde cada especie y
-                  decidir desde ahí qué puede convertirse en cultivo y en
-                  producto.
+                  Nuestro trabajo parte de esa capacidad de adaptación para
+                  traducirla en cultivo real, en producto y en una manera de
+                  producir más coherente con el contexto climático y territorial.
                 </p>
               </div>
             </div>
@@ -118,8 +107,8 @@ export default function SostenibilidadEInnovacionPage() {
                   Cómo funciona
                 </p>
                 <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                  Un proceso didáctico de entender, aunque exigente en la
-                  práctica.
+                  Lo que proponemos no es sustituirlo todo, sino ampliar el
+                  mapa de lo que puede cultivarse con sentido.
                 </h2>
               </div>
 
@@ -130,12 +119,12 @@ export default function SostenibilidadEInnovacionPage() {
                   </p>
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-neutral-950">
-                      Leemos el contexto
+                      Recuperar valor agrícola
                     </h3>
                     <p className="text-sm leading-6 text-neutral-600 sm:text-base">
-                      Partimos del suelo, del agua disponible y del grado de
-                      salinidad real, porque cualquier decisión agronómica útil
-                      tiene que empezar ahí.
+                      Este modelo permite volver a mirar suelos en desuso o con
+                      limitaciones salinas como espacios que todavía pueden
+                      aportar valor productivo.
                     </p>
                   </div>
                 </article>
@@ -146,12 +135,12 @@ export default function SostenibilidadEInnovacionPage() {
                   </p>
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-neutral-950">
-                      Probamos especies con potencial
+                      Diversificar cultivos
                     </h3>
                     <p className="text-sm leading-6 text-neutral-600 sm:text-base">
-                      Seleccionamos halófitas, observamos su comportamiento y
-                      ajustamos el aprendizaje sobre aquello que puede sostener
-                      interés productivo y estabilidad.
+                      Introducir halófitas no significa desplazar todo lo
+                      existente, sino sumar especies que responden mejor a unas
+                      condiciones que ya están cambiando.
                     </p>
                   </div>
                 </article>
@@ -162,12 +151,12 @@ export default function SostenibilidadEInnovacionPage() {
                   </p>
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-neutral-950">
-                      Traducimos ese aprendizaje en producto
+                      Acercar producto con contexto
                     </h3>
                     <p className="text-sm leading-6 text-neutral-600 sm:text-base">
-                      El cultivo deja de ser solo ensayo cuando se convierte en
-                      una propuesta más clara: una planta con valor agrícola,
-                      lectura comercial y aplicaciones reales.
+                      La innovación aquí no se queda en el campo: llega al
+                      mercado en forma de productos con base científica,
+                      aplicación culinaria y una historia agronómica clara.
                     </p>
                   </div>
                 </article>
@@ -181,7 +170,7 @@ export default function SostenibilidadEInnovacionPage() {
                 Impacto
               </p>
               <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                El valor del enfoque se mide en lo que permite hacer mejor.
+                Este enfoque se mide por lo que hace posible.
               </h2>
             </div>
 
@@ -191,9 +180,9 @@ export default function SostenibilidadEInnovacionPage() {
                   Ambiental
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  Favorece una agricultura más alineada con contextos donde el
-                  agua dulce es limitada y donde la adaptación deja de ser una
-                  opción teórica para convertirse en una necesidad operativa.
+                  Reduce la dependencia de agua dulce y abre una agricultura más
+                  ajustada a contextos donde la salinidad ya forma parte de la
+                  realidad del terreno.
                 </p>
               </article>
 
@@ -202,9 +191,9 @@ export default function SostenibilidadEInnovacionPage() {
                   Productivo
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  Permite abrir nuevas posibilidades de cultivo allí donde otros
-                  modelos encuentran más restricciones, y convierte ese margen
-                  de adaptación en una base real de trabajo agrícola.
+                  Permite recuperar suelos infrautilizados y convertirlos en una
+                  base de trabajo agrario con especies preparadas para responder
+                  mejor a ese entorno.
                 </p>
               </article>
 
@@ -213,9 +202,9 @@ export default function SostenibilidadEInnovacionPage() {
                   Gastronómico
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-neutral-600 sm:text-base">
-                  Genera productos con identidad propia, capaces de llegar a
-                  cocina con una historia agronómica sólida detrás y no solo con
-                  un valor diferencial de presentación.
+                  Acerca al mercado ingredientes con identidad propia, capaces
+                  de llegar a cocina como algo más que una rareza: como producto
+                  útil, sabroso y con sentido.
                 </p>
               </article>
             </div>
@@ -228,8 +217,8 @@ export default function SostenibilidadEInnovacionPage() {
                   Ver el resultado
                 </p>
                 <h2 className="max-w-2xl text-2xl tracking-tight text-neutral-950 sm:text-3xl">
-                  Este enfoque se entiende mejor cuando lo ves convertido en
-                  plantas concretas y en usos reales.
+                  La mejor forma de entender este enfoque es verlo convertido en
+                  plantas concretas y usos reales.
                 </h2>
               </div>
 

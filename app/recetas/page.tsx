@@ -19,10 +19,12 @@ export default async function RecetasPage({ searchParams }: RecetasPageProps) {
     plantSlug: plant ? plant.slug : undefined,
   });
 
-  const title = plant ? `Recetas con ${plant.name}` : "Recetas";
+  const title = plant
+    ? `Recetas con ${plant.name}`
+    : "Del plato diario a la cocina con identidad";
   const description = plant
     ? `Ideas y propuestas para cocinar con ${plant.name.toLowerCase()} y descubrir su potencial gastronómico.`
-    : "Ideas y propuestas para cocinar con plantas halófitas.";
+    : "Las halófitas se pueden usar de forma muy sencilla: en fresco, en ensalada, salteadas, al vapor, encurtidas o como guarnición.";
   const hasUnknownPlantFilter = Boolean(plantSlug) && !plant;
 
   return (

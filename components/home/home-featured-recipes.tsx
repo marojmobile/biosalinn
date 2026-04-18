@@ -15,12 +15,12 @@ export function HomeFeaturedRecipes() {
               Cómo usarlas
             </p>
             <h2 className="max-w-xl text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-              Recetas que convierten curiosidad en uso real
+              Del plato diario a la cocina con identidad
             </h2>
             <p className="max-w-2xl text-base leading-7 text-[#5f5950]">
-              Las recetas no deben vivir aisladas: sirven para explicar el
-              producto y reducir la fricción de compra o consumo, especialmente
-              desde móvil y desde QR.
+              Las halófitas se pueden usar en fresco, salteadas, al vapor,
+              encurtidas o transformadas en sales, aceites, salsas y otras
+              elaboraciones con mucho recorrido.
             </p>
           </div>
 

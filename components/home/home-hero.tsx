@@ -29,8 +29,9 @@ export function HomeHero() {
           </div>
 
           <p className="mt-8 max-w-2xl text-base leading-7 text-[#4f4a42] sm:text-lg sm:leading-8">
-            Cultivamos plantas halófitas con agua salobre, uniendo agricultura
-            regenerativa, conocimiento agronómico y valor gastronómico.
+            Cultivamos halófitas con agua salobre en una agricultura biosalina
+            conectada con el territorio, la base científica y el valor real en
+            cocina.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

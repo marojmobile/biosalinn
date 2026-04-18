@@ -19,8 +19,9 @@ export function HomeCTA() {
             </h2>
 
             <p className="text-base leading-7 text-[#5f5950]">
-              Restauración, distribución, colaboración o información general
-              sobre el proyecto: estaremos encantados de escucharte.
+              Restauración, distribución o interés por un producto diferencial:
+              si quieres conocer mejor VERDESAL, estaremos encantados de
+              escucharte.
             </p>
 
             <Link

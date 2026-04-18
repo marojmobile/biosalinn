@@ -7,13 +7,13 @@ import { siteConfig } from "@/content/site-config";
 const teamMembers = [
   {
     name: "Alicia",
-    role: "Visión y desarrollo del proyecto",
-    bio: "Impulsa la dirección de VERDESAL y cuida que el trabajo del campo, la investigación y la forma de contarlo mantengan una misma coherencia. Su papel tiene mucho de escucha, de criterio y de insistencia en que el proyecto siga siendo legible y cercano.",
+    role: "Origen y mirada del proyecto",
+    bio: "Ingeniera técnica agrícola, llevaba tiempo buscando un proyecto propio que no solo fuera viable, sino que también ayudara a mejorar el entorno en la medida de lo posible. Esa búsqueda es la que acaba dando forma a VERDESAL.",
   },
   {
     name: "Jordi",
-    role: "Trabajo agronómico y experimentación",
-    bio: "Está vinculado a la parte más práctica del cultivo: observar, probar, corregir y entender qué ocurre realmente cuando las plantas se enfrentan a un entorno salino. Su mirada sostiene la parte técnica sin separarla nunca de la realidad del terreno.",
+    role: "Cultivo y trabajo de campo",
+    bio: "Acompaña la parte más práctica del proyecto: observar, probar y entender qué ocurre realmente cuando estas plantas se cultivan en un entorno salino. Su trabajo ayuda a que la idea se sostenga sobre experiencia real y no solo sobre intuición.",
   },
 ];
 
@@ -38,15 +38,13 @@ export default function QuienesSomosPage() {
               </p>
 
               <h1 className="max-w-4xl text-4xl tracking-tight text-neutral-950 sm:text-5xl">
-                VERDESAL es una forma de mirar el territorio y preguntarse qué
-                puede crecer cuando aprendemos a trabajar con la sal, y no solo
-                contra ella.
+                De una inquietud personal a una huerta marina
               </h1>
 
               <p className="max-w-2xl text-base leading-7 text-[#4f4a42] sm:text-lg sm:leading-8">
-                Detrás del proyecto hay campo, observación, ensayo y una
-                voluntad muy concreta de convertir esa búsqueda en algo útil,
-                cultivable y comprensible.
+                VERDESAL nace de una pregunta muy concreta: qué agricultura
+                tiene sentido en un territorio donde la sal, el agua y el suelo
+                ya no se pueden mirar como antes.
               </p>
             </div>
 
@@ -55,10 +53,9 @@ export default function QuienesSomosPage() {
                 Una idea de partida
               </p>
               <p className="mt-4 text-lg leading-8 text-[#4f4a42]">
-                VERDESAL no nace para adornar un discurso sobre sostenibilidad.
-                Nace de una inquietud real: entender si los entornos salinos
-                podían abrir nuevas oportunidades agrícolas y convertirse, con
-                trabajo y criterio, en un proyecto de verdad.
+                Alicia Picazo, ingeniera técnica agrícola, llevaba tiempo
+                buscando un proyecto propio que no solo fuera viable, sino que
+                también ayudara a mejorar el entorno en la medida de lo posible.
               </p>
             </div>
           </div>
@@ -82,34 +79,27 @@ export default function QuienesSomosPage() {
                   Nuestra historia
                 </p>
                 <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                  El proyecto empieza cuando la sal deja de verse solo como un
-                  problema.
+                  La respuesta apareció al conocer las halófitas.
                 </h2>
               </div>
 
               <div className="space-y-5 text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
                 <p>
-                  En el origen de VERDESAL no hay una gran promesa publicitaria.
-                  Hay una pregunta mucho más concreta: qué ocurre si, en lugar
-                  de insistir en un modelo que no encaja del todo con las
-                  condiciones del entorno, se empieza a observar qué especies
-                  sí pueden adaptarse a él.
+                  La respuesta apareció al conocer las halófitas: plantas que
+                  crecen de forma natural en suelos salinos y que pueden vivir
+                  con agua salobre o incluso marina.
                 </p>
 
                 <p>
-                  Esa pregunta lleva a las halófitas. No como rareza vegetal,
-                  sino como una posibilidad agrícola real. A partir de ahí
-                  aparecen el ensayo, la prueba, el aprendizaje lento y el
-                  intento de traducir todo eso en un producto que pueda
-                  entenderse sin simplificarlo.
+                  Ahí vimos una manera distinta de cultivar, más conectada con
+                  el paisaje litoral y con una lógica agrícola que aprovecha lo
+                  que otros cultivos no pueden.
                 </p>
 
                 <p>
-                  VERDESAL crece precisamente en ese cruce: territorio,
-                  experimentación y cultura del producto. La gastronomía entra
-                  después, cuando hace falta mostrar de forma tangible que estas
-                  plantas no solo pueden cultivarse, sino también tener sentido
-                  en la mesa.
+                  VERDESAL nace precisamente en ese cruce entre observación,
+                  cultivo y producto, con la voluntad de hacer legible algo que
+                  parte del territorio y de una necesidad real.
                 </p>
               </div>
             </div>
@@ -122,45 +112,41 @@ export default function QuienesSomosPage() {
                   Qué hacemos
                 </p>
                 <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                  El proyecto se sostiene en tres movimientos que se tocan todo
-                  el tiempo.
+                  Eso es lo que hace diferente a VERDESAL.
                 </h2>
               </div>
 
               <div className="space-y-8">
                 <article className="border-b border-neutral-200 pb-6">
                   <h3 className="text-xl font-semibold text-neutral-950">
-                    Cultivar con adaptación real
+                    No trabajamos contra el territorio
                   </h3>
                   <p className="mt-3 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
-                    Trabajamos con plantas halófitas desde una lógica agronómica
-                    concreta: entender qué responde bien al contexto, qué puede
-                    sostenerse en el tiempo y qué abre posibilidades nuevas para
-                    un entorno condicionado por la salinidad.
+                    Trabajamos con especies que encajan con un entorno marcado
+                    por la salinidad, en lugar de forzar modelos que necesitan
+                    corregir continuamente lo que el lugar ya está diciendo.
                   </p>
                 </article>
 
                 <article className="border-b border-neutral-200 pb-6">
                   <h3 className="text-xl font-semibold text-neutral-950">
-                    Investigar sin separar teoría y terreno
+                    Cultivamos con valor gastronómico real
                   </h3>
                   <p className="mt-3 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
-                    La base científica no aparece como una capa externa. Forma
-                    parte del día a día del proyecto: observar, comparar,
-                    corregir y sacar conclusiones útiles a partir de lo que
-                    sucede realmente en cultivo.
+                    Nos interesan plantas que no solo puedan cultivarse, sino
+                    que también tengan sentido en cocina y puedan llegar a la
+                    mesa como producto útil, comprensible y atractivo.
                   </p>
                 </article>
 
                 <article>
                   <h3 className="text-xl font-semibold text-neutral-950">
-                    Darle al producto una vida comprensible
+                    Del campo a la cocina, sin artificio
                   </h3>
                   <p className="mt-3 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base">
-                    Cuando la planta llega a cocina o a un contexto comercial, no
-                    lo hace como simple curiosidad. Llega con una historia de
-                    cultivo detrás y con una voluntad clara de ser entendida,
-                    usada y valorada.
+                    Ligadas al Mediterráneo y a nuestra costa, las plantas que
+                    cultivamos llegan a cocina con una mirada práctica, cercana
+                    y honesta, sin separar lo agronómico de lo gastronómico.
                   </p>
                 </article>
               </div>
@@ -208,22 +194,20 @@ export default function QuienesSomosPage() {
               </p>
 
               <h2 className="max-w-3xl text-3xl tracking-tight text-[#35542f] sm:text-4xl">
-                Trabajamos desde una agricultura biosalina, agroecológica y
-                regenerativa porque el proyecto solo tiene sentido si sigue
-                conectado a la realidad del lugar donde nace.
+                VERDESAL se construye desde una agricultura que escucha el lugar
+                donde nace y busca convertir esa adaptación en valor real.
               </h2>
 
               <div className="max-w-3xl space-y-4 text-base leading-7 text-[#4f4a42]">
                 <p>
-                  Eso significa adaptar el cultivo en lugar de imponerlo,
-                  aprender del comportamiento de las plantas antes de prometer
-                  resultados y construir valor a partir de lo que el territorio
-                  hace posible.
+                  Cultivamos con el territorio, no contra él. Esa es la base de
+                  todo lo demás: del cultivo, del producto y de la manera en que
+                  lo contamos.
                 </p>
                 <p>
-                  También significa no separar el discurso ambiental del trabajo
-                  agrícola ni la innovación del producto final. Todo forma parte
-                  de una misma cadena.
+                  Lo que hacemos parte de contenido real, de campo, de ensayo y
+                  de cocina, y busca mantener siempre una relación clara con el
+                  paisaje litoral que lo hace posible.
                 </p>
               </div>
             </div>
