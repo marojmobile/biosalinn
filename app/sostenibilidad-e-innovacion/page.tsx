@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageContainer } from "@/components/layout/page-container";
 import { siteConfig } from "@/content/site-config";
@@ -30,13 +31,25 @@ export default function SostenibilidadEInnovacionPage() {
 
         <div className="mt-12 space-y-14 sm:mt-16 sm:space-y-20">
           <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                El problema
-              </p>
-              <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
-                El reto no es solo producir más, sino producir mejor.
-              </h2>
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+                  El problema
+                </p>
+                <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
+                  El reto no es solo producir más, sino producir mejor.
+                </h2>
+              </div>
+
+              <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
+                <Image
+                  src="/images/plants/salicornia/detail-2.webp"
+                  alt="Detalle de cultivo en un entorno salino"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 38vw"
+                />
+              </div>
             </div>
 
             <div className="space-y-5 text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
@@ -83,19 +96,33 @@ export default function SostenibilidadEInnovacionPage() {
                 </h2>
               </div>
 
-              <div className="space-y-5 text-base leading-7 text-[#4f4a42] sm:text-lg sm:leading-8">
-                <p>
-                  Requieren menos agua dulce y pueden crecer en terrenos que hoy
-                  se consideran marginales para la agricultura habitual. No son
-                  una promesa teórica: son plantas adaptadas de verdad a ese
-                  entorno, capaces de convertir una limitación en posibilidad.
-                </p>
+              <div className="space-y-5">
+                <div className="space-y-5 text-base leading-7 text-[#4f4a42] sm:text-lg sm:leading-8">
+                  <p>
+                    Requieren menos agua dulce y pueden crecer en terrenos que
+                    hoy se consideran marginales para la agricultura habitual.
+                    No son una promesa teórica: son plantas adaptadas de verdad
+                    a ese entorno, capaces de convertir una limitación en
+                    posibilidad.
+                  </p>
 
-                <p>
-                  Nuestro trabajo parte de esa capacidad de adaptación para
-                  traducirla en cultivo real, en producto y en una manera de
-                  producir más coherente con el contexto climático y territorial.
-                </p>
+                  <p>
+                    Nuestro trabajo parte de esa capacidad de adaptación para
+                    traducirla en cultivo real, en producto y en una manera de
+                    producir más coherente con el contexto climático y
+                    territorial.
+                  </p>
+                </div>
+
+                <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
+                  <Image
+                    src="/images/plants/ficoide-glacial/detail-2.webp"
+                    alt="Ficoide glacial como ejemplo de planta adaptada a condiciones salinas"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 44vw"
+                  />
+                </div>
               </div>
             </div>
           </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PageContainer } from "@/components/layout/page-container";
 import { RecipeGrid } from "@/components/recipes/recipe-grid";
 import { PageHeader } from "@/components/shared/page-header";
@@ -31,6 +32,42 @@ export default async function RecetasPage({ searchParams }: RecetasPageProps) {
     <section className="py-10 sm:py-14">
       <PageContainer>
         <PageHeader title={title} description={description} />
+
+        {!plant && !hasUnknownPlantFilter ? (
+          <section className="mb-10 grid gap-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-start">
+            <div className="space-y-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-sm leading-6 text-neutral-600 sm:p-6 sm:text-base">
+              <p>
+                También funcionan muy bien transformadas: en salmueras,
+                vinagres, sales vegetales, aceites, salsas o incluso
+                mermeladas y elaboraciones dulces en algunos casos.
+              </p>
+              <p>
+                Hay usos muy concretos que ya forman parte de nuestra manera de
+                trabajarlas. La salicornia puede ir cruda, escaldada o
+                encurtida; el hinojo marino funciona muy bien en vinagre, en
+                ensaladas, con pescado o como botánico; el ficoide glacial
+                aporta frescor en crudo y da muy buen resultado deshidratado o
+                en aceite.
+              </p>
+              <p>
+                Son ingredientes que no piden artificio, sino saber
+                acompañarlos. En cocina profesional y en casa dan mucho juego y
+                ayudan a entender el producto desde algo tan directo como el
+                plato.
+              </p>
+            </div>
+
+            <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
+              <Image
+                src="/images/recipes/ensalada-salicornia.webp"
+                alt="Plato con salicornia como ejemplo de uso culinario real"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </section>
+        ) : null}
 
         {hasUnknownPlantFilter ? (
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-neutral-700">

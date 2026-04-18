@@ -48,15 +48,28 @@ export default function QuienesSomosPage() {
               </p>
             </div>
 
-            <div className="relative overflow-hidden rounded-[2rem] bg-white/70 p-6 shadow-sm sm:p-8">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
-                Una idea de partida
-              </p>
-              <p className="mt-4 text-lg leading-8 text-[#4f4a42]">
-                Alicia Picazo, ingeniera técnica agrícola, llevaba tiempo
-                buscando un proyecto propio que no solo fuera viable, sino que
-                también ayudara a mejorar el entorno en la medida de lo posible.
-              </p>
+            <div className="space-y-4">
+              <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100 shadow-sm">
+                <Image
+                  src="/images/plants/salicornia/cover.webp"
+                  alt="Salicornia cultivada en el proyecto VERDESAL"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+
+              <div className="relative overflow-hidden rounded-[2rem] bg-white/70 p-6 shadow-sm sm:p-8">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#8d7a63]">
+                  Una idea de partida
+                </p>
+                <p className="mt-4 text-lg leading-8 text-[#4f4a42]">
+                  Alicia Picazo, ingeniera técnica agrícola, llevaba tiempo
+                  buscando un proyecto propio que no solo fuera viable, sino que
+                  también ayudara a mejorar el entorno en la medida de lo
+                  posible.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -65,8 +78,8 @@ export default function QuienesSomosPage() {
           <section className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
               <Image
-                src="/images/plants/placeholder.jpg"
-                alt="Territorio y entorno de VERDESAL"
+                src="/images/plants/verdolaga-marina/cover.webp"
+                alt="Cultivo de verdolaga marina en un entorno ligado al litoral"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 42vw"
@@ -114,6 +127,16 @@ export default function QuienesSomosPage() {
                 <h2 className="text-3xl tracking-tight text-[#b3946a] sm:text-4xl">
                   Eso es lo que hace diferente a VERDESAL.
                 </h2>
+
+                <div className="relative aspect-4/3 overflow-hidden rounded-[2rem] bg-neutral-100">
+                  <Image
+                    src="/images/plants/ficoide-glacial/detail-1.webp"
+                    alt="Detalle de ficoide glacial como ejemplo de producto con valor gastronómico"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 36vw"
+                  />
+                </div>
               </div>
 
               <div className="space-y-8">
